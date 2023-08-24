@@ -1,0 +1,20 @@
+[package]
+name = "filecounter"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+# Parse command line argument by defining a struct
+# https://crates.io/crates/structopt
+structopt = "0.3"
+
+# Recursively walk a directory
+# https://crates.io/crates/walkdir
+walkdir = "2.3"
+
+[[bin]]
+name = "filecounter"
+path = "src/main.rs"
