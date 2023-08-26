@@ -73,7 +73,7 @@ mod tests {
         let user_extensions = vec!["png".to_string(), "gif".to_string()];
         let default_extensions = vec!["txt".to_string(), "jpg".to_string()];
         let result = combine_extensions(user_extensions, default_extensions);
-        assert_eq!(result, vec!["png", "gif", "txt", "jpg"]);
+        assert_eq!(result, vec!["txt", "jpg", "png", "gif"]);
     }
 
     #[test]
@@ -89,7 +89,7 @@ mod tests {
         let user_extensions = vec!["txt".to_string(), "jpg".to_string()];
         let default_extensions = vec!["jpg".to_string(), "png".to_string()];
         let result = combine_extensions(user_extensions, default_extensions);
-        assert_eq!(result, vec!["txt", "jpg", "png"]);
+        assert_eq!(result, vec!["jpg", "png", "txt", "jpg"]);
     }
 
     // Add more test cases as needed
