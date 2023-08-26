@@ -10,8 +10,8 @@ license = "MIT"
 [dependencies]
 
 # Parse command line argument by defining a struct
-# https://crates.io/crates/structopt
-structopt = "0.3"
+# https://github.com/clap-rs/clap/
+clap = { version = "3.0", features = ["derive"] }
 
 # Recursively walk a directory
 # https://crates.io/crates/walkdir

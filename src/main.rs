@@ -4,7 +4,7 @@ use crate::file_counter::*;
 
 // Add the necessary imports
 use std::path::PathBuf;
-use structopt::StructOpt;
+use clap::StructOpt;
 
 // Define the command-line options using structopt
 #[derive(StructOpt)]
@@ -12,10 +12,10 @@ struct Cli {
     #[structopt(parse(from_os_str))]
     directory: PathBuf,
 
-    #[structopt(short = "e", long = "extensions")]
+    #[structopt(short = 'e', long = "extensions")]
     extensions: Vec<String>,
 
-    #[structopt(short = "r", long = "recursive")]
+    #[structopt(short = 'r', long = "recursive")]
     recursive: bool,
 }
 
