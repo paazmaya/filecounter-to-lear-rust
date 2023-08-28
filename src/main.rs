@@ -3,18 +3,18 @@ use crate::file_counter::*;
 
 // Add the necessary imports
 use std::path::PathBuf;
-use clap::StructOpt;
+use clap::Parser;
 
 // Define the command-line options using structopt
-#[derive(StructOpt)]
+#[derive(Parser, Debug)] // requires `derive` feature
+#[command(author, version, about, long_about = None)]
 struct Cli {
-    #[structopt(parse(from_os_str))]
     directory: PathBuf,
 
-    #[structopt(short = 'e', long = "extensions")]
+    #[arg(short = 'e')]
     extensions: Vec<String>,
 
-    #[structopt(short = 'r', long = "recursive")]
+    #[arg(short = 'r')]
     recursive: bool,
 }
 
@@ -29,7 +29,8 @@ fn main() {
     .collect();
 
     // Parse command-line arguments
-    let args: Cli = Cli::from_args();
+    let args = Cli::parse();
+    //println!("{args:?}");
 
     // Combine user-provided extensions with default extensions
     let user_extensions: Vec<String> = args.extensions.to_vec();
@@ -53,6 +54,12 @@ fn combine_extensions(user_extensions: Vec<String>, default_extensions: Vec<Stri
 #[cfg(test)]
 mod tests {
     use super::*;
+    
+    #[test]
+    fn verify_cli() {
+        use clap::CommandFactory;
+        Cli::command().debug_assert()
+    }
 
     #[test]
     fn test_combine_extensions_empty() {
@@ -85,7 +92,7 @@ mod tests {
         let result: Vec<String> = combine_extensions(user_extensions, default_extensions);
         assert_eq!(result, vec!["jpg", "png", "txt", "jpg"]);
     }
-    
+
     #[test]
     fn test_combine_extensions() {
         let user_extensions = vec!["txt".to_string(), "csv".to_string()];
