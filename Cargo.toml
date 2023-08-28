@@ -18,6 +18,12 @@ clap = { version = "4.4", features = ["derive"] }
 # https://crates.io/crates/walkdir
 walkdir = "2.3"
 
+[dev-dependencies]
+
+# Test CLI Applications
+# https://crates.io/crates/assert_cmd
+assert_cmd = "2.0"
+
 [[bin]]
 name = "filecounter"
 path = "src/main.rs"
