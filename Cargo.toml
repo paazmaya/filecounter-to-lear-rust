@@ -11,7 +11,7 @@ license = "MIT"
 
 # Parse command line argument by defining a struct
 # https://github.com/clap-rs/clap/
-clap = { version = "3.0", features = ["derive"] }
+clap = { version = "4.4", features = ["derive"] }
 
 # Recursively walk a directory
 # https://crates.io/crates/walkdir
