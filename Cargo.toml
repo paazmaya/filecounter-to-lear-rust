@@ -4,7 +4,7 @@ description = "Command line tool to count files"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-author = "Juga Paazmaya <paazmaya@yahoo.com>"
+authors = ["Juga Paazmaya <paazmaya@yahoo.com>"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
