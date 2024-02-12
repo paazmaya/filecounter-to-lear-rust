@@ -12,7 +12,7 @@ authors = ["Juga Paazmaya <paazmaya@yahoo.com>"]
 
 # Parse command line argument by defining a struct
 # https://github.com/clap-rs/clap/
-clap = { version = "4.4", features = ["derive"] }
+clap = { version = "4.5", features = ["derive"] }
 
 # Recursively walk a directory
 # https://crates.io/crates/walkdir
